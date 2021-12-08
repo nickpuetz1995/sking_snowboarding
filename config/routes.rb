@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "friends#index"
   resources :non_ski_reviews
   resources :non_ski_activities
   resources :ski_areas
