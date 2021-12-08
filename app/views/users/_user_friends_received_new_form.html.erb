@@ -1,0 +1,22 @@
+<!-- Form friend start -->
+<%= form_with(model: @friend, local: true) do |f| %>
+<!-- Form friend end -->
+
+  <!-- Label and input for friend_sender_id start -->
+  <div class="form-group">
+    <%= f.label :friend_sender_id %>
+
+    <!-- Input for friend_sender_id start -->
+    <%= f.text_field :friend_sender_id, class: "form-control" %>
+    <!-- Input for friend_sender_id end -->
+  </div>
+  <!-- Label and input for friend_sender_id end -->
+
+  <!-- Label and input for friend_recipient_id start -->
+  <!-- Input for friend_recipient_id start -->
+  <%= f.hidden_field :friend_recipient_id, value: @user.id %>
+  <!-- Input for friend_recipient_id end -->
+  <!-- Label and input for friend_recipient_id end -->
+
+  <%= f.submit "Create friend", class: "btn btn-block btn-outline-secondary" %>
+<% end %>

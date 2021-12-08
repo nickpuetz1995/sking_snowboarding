@@ -8,6 +8,10 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
+    @ski_area_review = SkiAreaReview.new
+    @non_ski_review = NonSkiReview.new
+    @ski_check_in = SkiCheckIn.new
+    @friend = Friend.new
   end
 
   # GET /users/new

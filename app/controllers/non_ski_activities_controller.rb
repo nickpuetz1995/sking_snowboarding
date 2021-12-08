@@ -8,6 +8,7 @@ class NonSkiActivitiesController < ApplicationController
 
   # GET /non_ski_activities/1
   def show
+    @non_ski_review = NonSkiReview.new
   end
 
   # GET /non_ski_activities/new
@@ -24,7 +25,12 @@ class NonSkiActivitiesController < ApplicationController
     @non_ski_activity = NonSkiActivity.new(non_ski_activity_params)
 
     if @non_ski_activity.save
-      redirect_to @non_ski_activity, notice: 'Non ski activity was successfully created.'
+      message = 'NonSkiActivity was successfully created.'
+      if Rails.application.routes.recognize_path(request.referrer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
+        redirect_back fallback_location: request.referrer, notice: message
+      else
+        redirect_to @non_ski_activity, notice: message
+      end
     else
       render :new
     end

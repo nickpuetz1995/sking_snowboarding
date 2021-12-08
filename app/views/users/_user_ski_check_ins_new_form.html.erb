@@ -1,0 +1,22 @@
+<!-- Form ski_check_in start -->
+<%= form_with(model: @ski_check_in, local: true) do |f| %>
+<!-- Form ski_check_in end -->
+
+  <!-- Label and input for user_id start -->
+  <!-- Input for user_id start -->
+  <%= f.hidden_field :user_id, value: @user.id %>
+  <!-- Input for user_id end -->
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for ski_area_id start -->
+  <div class="form-group">
+    <%= f.label :ski_area_id %>
+
+    <!-- Input for ski_area_id start -->
+    <%= f.text_field :ski_area_id, class: "form-control" %>
+    <!-- Input for ski_area_id end -->
+  </div>
+  <!-- Label and input for ski_area_id end -->
+
+  <%= f.submit "Create ski check in", class: "btn btn-block btn-outline-secondary" %>
+<% end %>

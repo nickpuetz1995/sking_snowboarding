@@ -8,6 +8,9 @@ class SkiAreasController < ApplicationController
 
   # GET /ski_areas/1
   def show
+    @non_ski_activity = NonSkiActivity.new
+    @ski_area_review = SkiAreaReview.new
+    @ski_check_in = SkiCheckIn.new
   end
 
   # GET /ski_areas/new

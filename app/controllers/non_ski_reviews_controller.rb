@@ -24,7 +24,12 @@ class NonSkiReviewsController < ApplicationController
     @non_ski_review = NonSkiReview.new(non_ski_review_params)
 
     if @non_ski_review.save
-      redirect_to @non_ski_review, notice: 'Non ski review was successfully created.'
+      message = 'NonSkiReview was successfully created.'
+      if Rails.application.routes.recognize_path(request.referrer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
+        redirect_back fallback_location: request.referrer, notice: message
+      else
+        redirect_to @non_ski_review, notice: message
+      end
     else
       render :new
     end

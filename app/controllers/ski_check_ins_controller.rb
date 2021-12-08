@@ -24,7 +24,12 @@ class SkiCheckInsController < ApplicationController
     @ski_check_in = SkiCheckIn.new(ski_check_in_params)
 
     if @ski_check_in.save
-      redirect_to @ski_check_in, notice: 'Ski check in was successfully created.'
+      message = 'SkiCheckIn was successfully created.'
+      if Rails.application.routes.recognize_path(request.referrer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
+        redirect_back fallback_location: request.referrer, notice: message
+      else
+        redirect_to @ski_check_in, notice: message
+      end
     else
       render :new
     end

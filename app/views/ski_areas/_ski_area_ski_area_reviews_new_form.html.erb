@@ -1,0 +1,42 @@
+<!-- Form ski_area_review start -->
+<%= form_with(model: @ski_area_review, local: true) do |f| %>
+<!-- Form ski_area_review end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <%= f.label :user_id %>
+
+    <!-- Input for user_id start -->
+    <%= f.text_field :user_id, class: "form-control" %>
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for ski_area_id start -->
+  <!-- Input for ski_area_id start -->
+  <%= f.hidden_field :ski_area_id, value: @ski_area.id %>
+  <!-- Input for ski_area_id end -->
+  <!-- Label and input for ski_area_id end -->
+
+  <!-- Label and input for review start -->
+  <div class="form-group">
+    <%= f.label :review %>
+
+    <!-- Input for review start -->
+    <%= f.text_field :review, class: "form-control" %>
+    <!-- Input for review end -->
+  </div>
+  <!-- Label and input for review end -->
+
+  <!-- Label and input for rating start -->
+  <div class="form-group">
+    <%= f.label :rating %>
+
+    <!-- Input for rating start -->
+    <%= f.text_field :rating, class: "form-control" %>
+    <!-- Input for rating end -->
+  </div>
+  <!-- Label and input for rating end -->
+
+  <%= f.submit "Create ski area review", class: "btn btn-block btn-outline-secondary" %>
+<% end %>
