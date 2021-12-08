@@ -7,7 +7,7 @@
     <%= f.label :non_ski_activity_id %>
 
     <!-- Input for non_ski_activity_id start -->
-    <%= f.text_field :non_ski_activity_id, class: "form-control" %>
+    <%= f.collection_select :non_ski_activity_id, NonSkiActivity.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for non_ski_activity_id end -->
   </div>
   <!-- Label and input for non_ski_activity_id end -->

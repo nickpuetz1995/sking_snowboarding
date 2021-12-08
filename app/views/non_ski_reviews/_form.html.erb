@@ -16,7 +16,7 @@
 
     <%= f.label :non_ski_activity_id %>
     <!-- Input for non_ski_activity_id start -->
-    <%= f.number_field :non_ski_activity_id, class: non_ski_activity_class, placeholder: "Enter non ski activity" %>
+    <%= f.collection_select :non_ski_activity_id, NonSkiActivity.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for non_ski_activity_id end -->
     <% if non_ski_activity_was_invalid %>
       <% non_ski_review.errors.full_messages_for(:non_ski_activity).each do |message| %>
