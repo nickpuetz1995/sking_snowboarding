@@ -1,0 +1,109 @@
+<% was_validated = non_ski_review.errors.any? %>
+
+<%= form_with(model: non_ski_review, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <!-- Label and input for non_ski_activity_id start -->
+  <div class="form-group">
+    <% non_ski_activity_class = "form-control" %>
+    <% non_ski_activity_was_invalid = non_ski_review.errors.include?(:non_ski_activity) %>
+
+    <% if was_validated %>
+      <% if non_ski_activity_was_invalid %>
+        <% non_ski_activity_class << " is-invalid" %>
+      <% else %>
+        <% non_ski_activity_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :non_ski_activity_id %>
+    <!-- Input for non_ski_activity_id start -->
+    <%= f.number_field :non_ski_activity_id, class: non_ski_activity_class, placeholder: "Enter non ski activity" %>
+    <!-- Input for non_ski_activity_id end -->
+    <% if non_ski_activity_was_invalid %>
+      <% non_ski_review.errors.full_messages_for(:non_ski_activity).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for non_ski_activity_id end -->
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <% user_class = "form-control" %>
+    <% user_was_invalid = non_ski_review.errors.include?(:user) %>
+
+    <% if was_validated %>
+      <% if user_was_invalid %>
+        <% user_class << " is-invalid" %>
+      <% else %>
+        <% user_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :user_id %>
+    <!-- Input for user_id start -->
+    <%= f.number_field :user_id, class: user_class, placeholder: "Enter user" %>
+    <!-- Input for user_id end -->
+    <% if user_was_invalid %>
+      <% non_ski_review.errors.full_messages_for(:user).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for user_id end -->
+  <!-- Label and input for review start -->
+  <div class="form-group">
+    <% review_class = "form-control" %>
+    <% review_was_invalid = non_ski_review.errors.include?(:review) %>
+
+    <% if was_validated %>
+      <% if review_was_invalid %>
+        <% review_class << " is-invalid" %>
+      <% else %>
+        <% review_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :review %>
+    <!-- Input for review start -->
+    <%= f.text_field :review, class: review_class, placeholder: "Enter review" %>
+    <!-- Input for review end -->
+    <% if review_was_invalid %>
+      <% non_ski_review.errors.full_messages_for(:review).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for review end -->
+  <!-- Label and input for rating start -->
+  <div class="form-group">
+    <% rating_class = "form-control" %>
+    <% rating_was_invalid = non_ski_review.errors.include?(:rating) %>
+
+    <% if was_validated %>
+      <% if rating_was_invalid %>
+        <% rating_class << " is-invalid" %>
+      <% else %>
+        <% rating_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :rating %>
+    <!-- Input for rating start -->
+    <%= f.number_field :rating, class: rating_class, placeholder: "Enter rating" %>
+    <!-- Input for rating end -->
+    <% if rating_was_invalid %>
+      <% non_ski_review.errors.full_messages_for(:rating).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for rating end -->
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>
