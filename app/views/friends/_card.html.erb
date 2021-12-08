@@ -24,16 +24,20 @@
 
       <!-- Edit link friend start -->
       <div class="col">
-        <%= link_to edit_friend_url(friend), class: "btn btn-block btn-outline-secondary" do %>
-          <i class="fas fa-edit"></i>
+        <% if current_user == @friend.friend_sender %>
+          <%= link_to edit_friend_url(friend), class: "btn btn-block btn-sm btn-outline-secondary" do %>
+            <i class="fas fa-edit"></i>
+          <% end %>
         <% end %>
       </div>
       <!-- Edit link friend end -->
 
       <!-- Delete link friend start -->
       <div class="col">
-        <%= link_to friend, method: :delete, data: { confirm: "Do you really want to delete this friend?" }, class: "btn btn-block btn-outline-secondary" do %>
-          <i class="fas fa-trash-alt"></i>
+        <% if current_user == @friend.friend_sender %>
+          <%= link_to friend, method: :delete, data: { confirm: "Do you really want to delete this friend?" }, class: "btn btn-block btn-outline-secondary" do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
         <% end %>
       </div>
       <!-- Delete link friend end -->
