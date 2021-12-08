@@ -17,5 +17,4 @@ class SkiAreaResource < ApplicationResource
   has_many   :ski_check_ins
 
   # Indirect associations
-
 end

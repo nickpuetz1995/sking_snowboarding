@@ -13,7 +13,7 @@ class Api::V1::SkiAreasController < Api::V1::GraphitiController
     ski_area = SkiAreaResource.build(params)
 
     if ski_area.save
-      render jsonapi: ski_area, status: 201
+      render jsonapi: ski_area, status: :created
     else
       render jsonapi_errors: ski_area
     end
@@ -33,7 +33,7 @@ class Api::V1::SkiAreasController < Api::V1::GraphitiController
     ski_area = SkiAreaResource.find(params)
 
     if ski_area.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: ski_area
     end

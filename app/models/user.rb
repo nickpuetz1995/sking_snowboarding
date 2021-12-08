@@ -1,26 +1,25 @@
 class User < ApplicationRecord
-  
   include JwtToken
-# Direct associations
+  # Direct associations
 
   has_many   :ski_area_reviews,
-             :dependent => :destroy
+             dependent: :destroy
 
   has_many   :non_ski_reviews,
-             :dependent => :destroy
+             dependent: :destroy
 
   has_many   :ski_check_ins,
-             :dependent => :destroy
+             dependent: :destroy
 
   has_many   :friends_received,
-             :class_name => "Friend",
-             :foreign_key => "friend_recipient_id",
-             :dependent => :destroy
+             class_name: "Friend",
+             foreign_key: "friend_recipient_id",
+             dependent: :destroy
 
   has_many   :friends_sent,
-             :class_name => "Friend",
-             :foreign_key => "friend_sender_id",
-             :dependent => :destroy
+             class_name: "Friend",
+             foreign_key: "friend_sender_id",
+             dependent: :destroy
 
   # Indirect associations
 

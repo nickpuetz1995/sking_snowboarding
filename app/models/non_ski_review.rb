@@ -8,8 +8,8 @@ class NonSkiReview < ApplicationRecord
   # Indirect associations
 
   has_one    :friends_sent,
-             :through => :user,
-             :source => :friends_sent
+             through: :user,
+             source: :friends_sent
 
   # Validations
 
@@ -18,5 +18,4 @@ class NonSkiReview < ApplicationRecord
   def to_s
     non_ski_activity.to_s
   end
-
 end

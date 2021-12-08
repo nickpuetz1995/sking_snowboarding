@@ -13,7 +13,7 @@ class Api::V1::NonSkiActivitiesController < Api::V1::GraphitiController
     non_ski_activity = NonSkiActivityResource.build(params)
 
     if non_ski_activity.save
-      render jsonapi: non_ski_activity, status: 201
+      render jsonapi: non_ski_activity, status: :created
     else
       render jsonapi_errors: non_ski_activity
     end
@@ -33,7 +33,7 @@ class Api::V1::NonSkiActivitiesController < Api::V1::GraphitiController
     non_ski_activity = NonSkiActivityResource.find(params)
 
     if non_ski_activity.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: non_ski_activity
     end

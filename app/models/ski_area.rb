@@ -2,14 +2,14 @@ class SkiArea < ApplicationRecord
   # Direct associations
 
   has_many   :non_ski_activities,
-             :foreign_key => "tagged_ski_area_id",
-             :dependent => :destroy
+             foreign_key: "tagged_ski_area_id",
+             dependent: :destroy
 
   has_many   :ski_area_reviews,
-             :dependent => :destroy
+             dependent: :destroy
 
   has_many   :ski_check_ins,
-             :dependent => :destroy
+             dependent: :destroy
 
   # Indirect associations
 
@@ -20,5 +20,4 @@ class SkiArea < ApplicationRecord
   def to_s
     name
   end
-
 end

@@ -15,5 +15,4 @@ class NonSkiActivityResource < ApplicationResource
              resource: SkiAreaResource
 
   # Indirect associations
-
 end

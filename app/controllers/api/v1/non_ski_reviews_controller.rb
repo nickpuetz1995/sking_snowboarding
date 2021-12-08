@@ -13,7 +13,7 @@ class Api::V1::NonSkiReviewsController < Api::V1::GraphitiController
     non_ski_review = NonSkiReviewResource.build(params)
 
     if non_ski_review.save
-      render jsonapi: non_ski_review, status: 201
+      render jsonapi: non_ski_review, status: :created
     else
       render jsonapi_errors: non_ski_review
     end
@@ -33,7 +33,7 @@ class Api::V1::NonSkiReviewsController < Api::V1::GraphitiController
     non_ski_review = NonSkiReviewResource.find(params)
 
     if non_ski_review.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: non_ski_review
     end

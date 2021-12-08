@@ -2,24 +2,24 @@ class Friend < ApplicationRecord
   # Direct associations
 
   belongs_to :friend_recipient,
-             :class_name => "User"
+             class_name: "User"
 
   belongs_to :friend_sender,
-             :class_name => "User"
+             class_name: "User"
 
   # Indirect associations
 
   has_one    :ski_check_in,
-             :through => :friend_sender,
-             :source => :ski_check_ins
+             through: :friend_sender,
+             source: :ski_check_ins
 
   has_one    :non_ski_review,
-             :through => :friend_sender,
-             :source => :non_ski_reviews
+             through: :friend_sender,
+             source: :non_ski_reviews
 
   has_one    :ski_area_review,
-             :through => :friend_sender,
-             :source => :ski_area_reviews
+             through: :friend_sender,
+             source: :ski_area_reviews
 
   # Validations
 
@@ -28,5 +28,4 @@ class Friend < ApplicationRecord
   def to_s
     friend_sender.to_s
   end
-
 end

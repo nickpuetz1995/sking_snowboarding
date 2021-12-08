@@ -8,8 +8,8 @@ class SkiCheckIn < ApplicationRecord
   # Indirect associations
 
   has_one    :friends_sent,
-             :through => :user,
-             :source => :friends_sent
+             through: :user,
+             source: :friends_sent
 
   # Validations
 
@@ -18,5 +18,4 @@ class SkiCheckIn < ApplicationRecord
   def to_s
     user.to_s
   end
-
 end
