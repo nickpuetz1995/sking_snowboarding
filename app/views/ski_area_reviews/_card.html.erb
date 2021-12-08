@@ -1,0 +1,56 @@
+<div class="card mb-3">
+  <h2 class="card-header h4">
+    Ski Area Review #<%= ski_area_review.id %>
+  </h2>
+
+  <div class="card-body">
+    <dl class="mb-1">
+      <dt>User</dt>
+      <!-- Display user_id start -->
+      <dd><%= ski_area_review.user_id %></dd>
+      <!-- Display user_id end -->
+
+      <dt>Ski area</dt>
+      <!-- Display ski_area_id start -->
+      <dd><%= ski_area_review.ski_area_id %></dd>
+      <!-- Display ski_area_id end -->
+
+      <dt>Review</dt>
+      <!-- Display review start -->
+      <dd><%= ski_area_review.review %></dd>
+      <!-- Display review end -->
+
+      <dt>Rating</dt>
+      <!-- Display rating start -->
+      <dd><%= ski_area_review.rating %></dd>
+      <!-- Display rating end -->
+
+    </dl>
+
+    <div class="row">
+      <div class="col">
+        <%= link_to_show_or_back ski_area_review, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
+      </div>
+
+      <!-- Edit link ski_area_review start -->
+      <div class="col">
+        <%= link_to edit_ski_area_review_url(ski_area_review), class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </div>
+      <!-- Edit link ski_area_review end -->
+
+      <!-- Delete link ski_area_review start -->
+      <div class="col">
+        <%= link_to ski_area_review, method: :delete, data: { confirm: "Do you really want to delete this ski_area_review?" }, class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </div>
+      <!-- Delete link ski_area_review end -->
+    </div>
+  </div>
+
+  <div class="card-footer text-muted">
+    Last updated <%= time_ago_in_words(ski_area_review.updated_at) %> ago
+  </div>
+</div>
