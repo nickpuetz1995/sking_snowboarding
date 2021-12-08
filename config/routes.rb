@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :ski_areas
   resources :ski_area_reviews
   resources :ski_check_ins
   resources :friends
