@@ -1,6 +1,11 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :friends_sent,
+             :class_name => "Friend",
+             :foreign_key => "friend_sender_id",
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
