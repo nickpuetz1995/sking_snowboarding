@@ -9,6 +9,8 @@ class NonSkiReviewResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :non_ski_activity
+
   belongs_to :user
 
   # Indirect associations
