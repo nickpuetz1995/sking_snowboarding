@@ -9,6 +9,10 @@ class Friend < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :ski_area_review,
+             :through => :friend_sender,
+             :source => :ski_area_reviews
+
   # Validations
 
   # Scopes
