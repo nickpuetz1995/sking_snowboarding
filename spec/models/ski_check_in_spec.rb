@@ -12,6 +12,8 @@ RSpec.describe SkiCheckIn, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_one(:friends_sent) }
+
     end
 
     describe "Validations" do

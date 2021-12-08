@@ -9,6 +9,10 @@ class Friend < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :ski_check_in,
+             :through => :friend_sender,
+             :source => :ski_check_ins
+
   has_one    :non_ski_review,
              :through => :friend_sender,
              :source => :non_ski_reviews

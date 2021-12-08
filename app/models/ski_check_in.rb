@@ -7,6 +7,10 @@ class SkiCheckIn < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :friends_sent,
+             :through => :user,
+             :source => :friends_sent
+
   # Validations
 
   # Scopes
