@@ -4,6 +4,8 @@ RSpec.describe Friend, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:friend_recipient) }
+
     it { should belong_to(:friend_sender) }
 
     end

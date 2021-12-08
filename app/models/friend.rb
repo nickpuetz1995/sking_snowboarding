@@ -1,6 +1,9 @@
 class Friend < ApplicationRecord
   # Direct associations
 
+  belongs_to :friend_recipient,
+             :class_name => "User"
+
   belongs_to :friend_sender,
              :class_name => "User"
 
