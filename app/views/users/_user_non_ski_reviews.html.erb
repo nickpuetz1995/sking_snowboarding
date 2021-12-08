@@ -10,18 +10,14 @@
   <ul class="list-group list-group-flush">
     <% @user.non_ski_reviews.each do |non_ski_review| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <%= link_to non_ski_review, non_ski_review %>
-        <!-- Show link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="user_non_ski_reviews_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "users/user_non_ski_reviews_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

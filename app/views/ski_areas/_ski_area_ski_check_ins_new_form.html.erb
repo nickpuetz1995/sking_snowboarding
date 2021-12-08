@@ -1,22 +1,12 @@
-<!-- Form ski_check_in start -->
 <%= form_with(model: @ski_check_in, local: true) do |f| %>
-<!-- Form ski_check_in end -->
 
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <%= f.label :user_id %>
 
-    <!-- Input for user_id start -->
     <%= f.collection_select :user_id, User.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for user_id end -->
   </div>
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for ski_area_id start -->
-  <!-- Input for ski_area_id start -->
   <%= f.hidden_field :ski_area_id, value: @ski_area.id %>
-  <!-- Input for ski_area_id end -->
-  <!-- Label and input for ski_area_id end -->
 
   <%= f.submit "Create ski check in", class: "btn btn-block btn-outline-secondary" %>
 <% end %>

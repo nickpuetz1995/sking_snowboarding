@@ -6,28 +6,20 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Description</dt>
-      <!-- Display description start -->
       <dd><%= non_ski_activity.description %></dd>
-      <!-- Display description end -->
 
       <dt>Tagged ski area</dt>
-      <!-- Display tagged_ski_area_id start -->
       <dd>
         <% if @non_ski_activity.tagged_ski_area.present? %>
           <%= link_to non_ski_activity.tagged_ski_area, non_ski_activity.tagged_ski_area %>
         <% end %>
       </dd>
-      <!-- Display tagged_ski_area_id end -->
 
       <dt>Title</dt>
-      <!-- Display title start -->
       <dd><%= non_ski_activity.title %></dd>
-      <!-- Display title end -->
 
       <dt>Address</dt>
-      <!-- Display address start -->
       <dd><%= non_ski_activity.address %></dd>
-      <!-- Display address end -->
 
     </dl>
 
@@ -36,21 +28,17 @@
         <%= link_to_show_or_back non_ski_activity, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link non_ski_activity start -->
       <div class="col">
         <%= link_to edit_non_ski_activity_url(non_ski_activity), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link non_ski_activity end -->
 
-      <!-- Delete link non_ski_activity start -->
       <div class="col">
         <%= link_to non_ski_activity, method: :delete, data: { confirm: "Do you really want to delete this non_ski_activity?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link non_ski_activity end -->
     </div>
   </div>
 

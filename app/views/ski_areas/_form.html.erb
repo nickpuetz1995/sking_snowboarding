@@ -1,7 +1,6 @@
 <% was_validated = ski_area.errors.any? %>
 
 <%= form_with(model: ski_area, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for name start -->
   <div class="form-group">
     <% name_class = "form-control" %>
     <% name_was_invalid = ski_area.errors.include?(:name) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :name %>
-    <!-- Input for name start -->
     <%= f.text_field :name, class: name_class, placeholder: "Enter name" %>
-    <!-- Input for name end -->
     <% if name_was_invalid %>
       <% ski_area.errors.full_messages_for(:name).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for name end -->
-  <!-- Label and input for forecast start -->
   <div class="form-group">
     <% forecast_class = "form-control" %>
     <% forecast_was_invalid = ski_area.errors.include?(:forecast) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :forecast %>
-    <!-- Input for forecast start -->
     <%= f.text_field :forecast, class: forecast_class, placeholder: "Enter forecast" %>
-    <!-- Input for forecast end -->
     <% if forecast_was_invalid %>
       <% ski_area.errors.full_messages_for(:forecast).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,8 +45,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for forecast end -->
-  <!-- Label and input for snow_last_night start -->
   <div class="form-group">
     <% snow_last_night_class = "form-control" %>
     <% snow_last_night_was_invalid = ski_area.errors.include?(:snow_last_night) %>
@@ -67,9 +58,7 @@
     <% end %>
 
     <%= f.label :snow_last_night %>
-    <!-- Input for snow_last_night start -->
     <%= f.text_field :snow_last_night, class: snow_last_night_class, placeholder: "Enter snow last night" %>
-    <!-- Input for snow_last_night end -->
     <% if snow_last_night_was_invalid %>
       <% ski_area.errors.full_messages_for(:snow_last_night).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -78,8 +67,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for snow_last_night end -->
-  <!-- Label and input for address start -->
   <div class="form-group">
     <% address_class = "form-control" %>
     <% address_was_invalid = ski_area.errors.include?(:address) %>
@@ -93,9 +80,7 @@
     <% end %>
 
     <%= f.label :address %>
-    <!-- Input for address start -->
     <%= f.text_field :address, class: address_class, placeholder: "Enter address" %>
-    <!-- Input for address end -->
     <% if address_was_invalid %>
       <% ski_area.errors.full_messages_for(:address).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -104,6 +89,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for address end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>

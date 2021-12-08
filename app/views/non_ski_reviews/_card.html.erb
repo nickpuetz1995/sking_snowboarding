@@ -6,32 +6,24 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Non ski activity</dt>
-      <!-- Display non_ski_activity_id start -->
       <dd>
         <% if @non_ski_review.non_ski_activity.present? %>
           <%= link_to non_ski_review.non_ski_activity, non_ski_review.non_ski_activity %>
         <% end %>
       </dd>
-      <!-- Display non_ski_activity_id end -->
 
       <dt>User</dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @non_ski_review.user.present? %>
           <%= link_to non_ski_review.user, non_ski_review.user %>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>Review</dt>
-      <!-- Display review start -->
       <dd><%= non_ski_review.review %></dd>
-      <!-- Display review end -->
 
       <dt>Rating</dt>
-      <!-- Display rating start -->
       <dd><%= non_ski_review.rating %></dd>
-      <!-- Display rating end -->
 
     </dl>
 
@@ -40,21 +32,17 @@
         <%= link_to_show_or_back non_ski_review, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link non_ski_review start -->
       <div class="col">
         <%= link_to edit_non_ski_review_url(non_ski_review), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link non_ski_review end -->
 
-      <!-- Delete link non_ski_review start -->
       <div class="col">
         <%= link_to non_ski_review, method: :delete, data: { confirm: "Do you really want to delete this non_ski_review?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link non_ski_review end -->
     </div>
   </div>
 

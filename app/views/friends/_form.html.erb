@@ -1,12 +1,7 @@
 <% was_validated = friend.errors.any? %>
 
 <%= form_with(model: friend, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for friend_sender_id start -->
-  <!-- Input for "friend_sender_id" start -->
   <%= f.hidden_field :friend_sender_id, value: current_user.id %>
-  <!-- Input for "friend_sender_id" end -->
-  <!-- Label and input for friend_sender_id end -->
-  <!-- Label and input for friend_recipient_id start -->
   <div class="form-group">
     <% friend_recipient_class = "form-control" %>
     <% friend_recipient_was_invalid = friend.errors.include?(:friend_recipient) %>
@@ -20,9 +15,7 @@
     <% end %>
 
     <%= f.label :friend_recipient_id %>
-    <!-- Input for friend_recipient_id start -->
     <%= f.collection_select :friend_recipient_id, User.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for friend_recipient_id end -->
     <% if friend_recipient_was_invalid %>
       <% friend.errors.full_messages_for(:friend_recipient).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -31,6 +24,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for friend_recipient_id end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>

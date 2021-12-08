@@ -10,24 +10,18 @@
   <ul class="list-group list-group-flush">
     <% @ski_area.non_ski_activities.each do |non_ski_activity| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <%= link_to non_ski_activity, non_ski_activity %>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%= link_to non_ski_activity, method: :delete, data: { confirm: "Do you really want to delete this non_ski_activity" } do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="ski_area_non_ski_activities_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "ski_areas/ski_area_non_ski_activities_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

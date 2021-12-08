@@ -6,22 +6,18 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>User</dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @ski_check_in.user.present? %>
           <%= link_to ski_check_in.user, ski_check_in.user %>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>Ski area</dt>
-      <!-- Display ski_area_id start -->
       <dd>
         <% if @ski_check_in.ski_area.present? %>
           <%= link_to ski_check_in.ski_area, ski_check_in.ski_area %>
         <% end %>
       </dd>
-      <!-- Display ski_area_id end -->
 
     </dl>
 
@@ -30,21 +26,17 @@
         <%= link_to_show_or_back ski_check_in, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link ski_check_in start -->
       <div class="col">
         <%= link_to edit_ski_check_in_url(ski_check_in), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link ski_check_in end -->
 
-      <!-- Delete link ski_check_in start -->
       <div class="col">
         <%= link_to ski_check_in, method: :delete, data: { confirm: "Do you really want to delete this ski_check_in?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link ski_check_in end -->
     </div>
   </div>
 
