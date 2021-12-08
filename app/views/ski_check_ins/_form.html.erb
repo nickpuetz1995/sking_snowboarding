@@ -42,7 +42,7 @@
 
     <%= f.label :ski_area_id %>
     <!-- Input for ski_area_id start -->
-    <%= f.number_field :ski_area_id, class: ski_area_class, placeholder: "Enter ski area" %>
+    <%= f.collection_select :ski_area_id, SkiArea.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for ski_area_id end -->
     <% if ski_area_was_invalid %>
       <% ski_check_in.errors.full_messages_for(:ski_area).each do |message| %>
