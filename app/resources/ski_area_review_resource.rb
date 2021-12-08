@@ -15,4 +15,6 @@ class SkiAreaReviewResource < ApplicationResource
 
   # Indirect associations
 
+  has_one    :friends_sent,
+             resource: FriendResource
 end
