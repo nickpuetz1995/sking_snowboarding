@@ -1,25 +1,20 @@
 class SkiAreaReviewsController < ApplicationController
   before_action :set_ski_area_review, only: %i[show edit update destroy]
 
-  # GET /ski_area_reviews
   def index
     @q = SkiAreaReview.ransack(params[:q])
     @ski_area_reviews = @q.result(distinct: true).includes(:user, :ski_area,
                                                            :friends_sent).page(params[:page]).per(10)
   end
 
-  # GET /ski_area_reviews/1
   def show; end
 
-  # GET /ski_area_reviews/new
   def new
     @ski_area_review = SkiAreaReview.new
   end
 
-  # GET /ski_area_reviews/1/edit
   def edit; end
 
-  # POST /ski_area_reviews
   def create
     @ski_area_review = SkiAreaReview.new(ski_area_review_params)
 
@@ -35,7 +30,6 @@ class SkiAreaReviewsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /ski_area_reviews/1
   def update
     if @ski_area_review.update(ski_area_review_params)
       redirect_to @ski_area_review,
@@ -45,7 +39,6 @@ class SkiAreaReviewsController < ApplicationController
     end
   end
 
-  # DELETE /ski_area_reviews/1
   def destroy
     @ski_area_review.destroy
     message = "SkiAreaReview was successfully deleted."
@@ -58,12 +51,10 @@ class SkiAreaReviewsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_ski_area_review
     @ski_area_review = SkiAreaReview.find(params[:id])
   end
 
-  # Only allow a trusted parameter "white list" through.
   def ski_area_review_params
     params.require(:ski_area_review).permit(:user_id, :ski_area_id, :review,
                                             :rating)

@@ -1,25 +1,20 @@
 class SkiCheckInsController < ApplicationController
   before_action :set_ski_check_in, only: %i[show edit update destroy]
 
-  # GET /ski_check_ins
   def index
     @q = SkiCheckIn.ransack(params[:q])
     @ski_check_ins = @q.result(distinct: true).includes(:user, :ski_area,
                                                         :friends_sent).page(params[:page]).per(10)
   end
 
-  # GET /ski_check_ins/1
   def show; end
 
-  # GET /ski_check_ins/new
   def new
     @ski_check_in = SkiCheckIn.new
   end
 
-  # GET /ski_check_ins/1/edit
   def edit; end
 
-  # POST /ski_check_ins
   def create
     @ski_check_in = SkiCheckIn.new(ski_check_in_params)
 
@@ -35,7 +30,6 @@ class SkiCheckInsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /ski_check_ins/1
   def update
     if @ski_check_in.update(ski_check_in_params)
       redirect_to @ski_check_in,
@@ -45,7 +39,6 @@ class SkiCheckInsController < ApplicationController
     end
   end
 
-  # DELETE /ski_check_ins/1
   def destroy
     @ski_check_in.destroy
     message = "SkiCheckIn was successfully deleted."
@@ -58,12 +51,10 @@ class SkiCheckInsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_ski_check_in
     @ski_check_in = SkiCheckIn.find(params[:id])
   end
 
-  # Only allow a trusted parameter "white list" through.
   def ski_check_in_params
     params.require(:ski_check_in).permit(:user_id, :ski_area_id)
   end
