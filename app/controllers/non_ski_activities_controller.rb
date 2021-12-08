@@ -3,7 +3,8 @@ class NonSkiActivitiesController < ApplicationController
 
   # GET /non_ski_activities
   def index
-    @non_ski_activities = NonSkiActivity.page(params[:page]).per(10)
+    @q = NonSkiActivity.ransack(params[:q])
+    @non_ski_activities = @q.result(:distinct => true).includes(:tagged_ski_area, :non_ski_reviews).page(params[:page]).per(10)
   end
 
   # GET /non_ski_activities/1

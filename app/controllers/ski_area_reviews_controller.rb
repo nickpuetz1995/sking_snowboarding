@@ -3,7 +3,8 @@ class SkiAreaReviewsController < ApplicationController
 
   # GET /ski_area_reviews
   def index
-    @ski_area_reviews = SkiAreaReview.page(params[:page]).per(10)
+    @q = SkiAreaReview.ransack(params[:q])
+    @ski_area_reviews = @q.result(:distinct => true).includes(:user, :ski_area, :friends_sent).page(params[:page]).per(10)
   end
 
   # GET /ski_area_reviews/1
