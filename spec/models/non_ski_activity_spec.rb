@@ -4,6 +4,8 @@ RSpec.describe NonSkiActivity, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:non_ski_reviews) }
+
     it { should belong_to(:tagged_ski_area) }
 
     end

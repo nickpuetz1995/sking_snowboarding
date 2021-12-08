@@ -4,6 +4,8 @@ RSpec.describe NonSkiReview, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:non_ski_activity) }
+
     it { should belong_to(:user) }
 
     end
