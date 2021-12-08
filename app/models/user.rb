@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :ski_area_reviews,
+             :dependent => :destroy
+
   has_many   :non_ski_reviews,
              :dependent => :destroy
 
