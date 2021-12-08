@@ -12,6 +12,8 @@ RSpec.describe Friend, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_one(:non_ski_review) }
+
     it { should have_one(:ski_area_review) }
 
     end
