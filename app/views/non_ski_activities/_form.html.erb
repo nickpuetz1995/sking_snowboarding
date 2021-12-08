@@ -1,0 +1,109 @@
+<% was_validated = non_ski_activity.errors.any? %>
+
+<%= form_with(model: non_ski_activity, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <!-- Label and input for description start -->
+  <div class="form-group">
+    <% description_class = "form-control" %>
+    <% description_was_invalid = non_ski_activity.errors.include?(:description) %>
+
+    <% if was_validated %>
+      <% if description_was_invalid %>
+        <% description_class << " is-invalid" %>
+      <% else %>
+        <% description_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :description %>
+    <!-- Input for description start -->
+    <%= f.text_field :description, class: description_class, placeholder: "Enter description" %>
+    <!-- Input for description end -->
+    <% if description_was_invalid %>
+      <% non_ski_activity.errors.full_messages_for(:description).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for description end -->
+  <!-- Label and input for tagged_ski_area_id start -->
+  <div class="form-group">
+    <% tagged_ski_area_class = "form-control" %>
+    <% tagged_ski_area_was_invalid = non_ski_activity.errors.include?(:tagged_ski_area) %>
+
+    <% if was_validated %>
+      <% if tagged_ski_area_was_invalid %>
+        <% tagged_ski_area_class << " is-invalid" %>
+      <% else %>
+        <% tagged_ski_area_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :tagged_ski_area_id %>
+    <!-- Input for tagged_ski_area_id start -->
+    <%= f.number_field :tagged_ski_area_id, class: tagged_ski_area_class, placeholder: "Enter tagged ski area" %>
+    <!-- Input for tagged_ski_area_id end -->
+    <% if tagged_ski_area_was_invalid %>
+      <% non_ski_activity.errors.full_messages_for(:tagged_ski_area).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for tagged_ski_area_id end -->
+  <!-- Label and input for title start -->
+  <div class="form-group">
+    <% title_class = "form-control" %>
+    <% title_was_invalid = non_ski_activity.errors.include?(:title) %>
+
+    <% if was_validated %>
+      <% if title_was_invalid %>
+        <% title_class << " is-invalid" %>
+      <% else %>
+        <% title_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :title %>
+    <!-- Input for title start -->
+    <%= f.text_field :title, class: title_class, placeholder: "Enter title" %>
+    <!-- Input for title end -->
+    <% if title_was_invalid %>
+      <% non_ski_activity.errors.full_messages_for(:title).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for title end -->
+  <!-- Label and input for address start -->
+  <div class="form-group">
+    <% address_class = "form-control" %>
+    <% address_was_invalid = non_ski_activity.errors.include?(:address) %>
+
+    <% if was_validated %>
+      <% if address_was_invalid %>
+        <% address_class << " is-invalid" %>
+      <% else %>
+        <% address_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :address %>
+    <!-- Input for address start -->
+    <%= f.text_field :address, class: address_class, placeholder: "Enter address" %>
+    <!-- Input for address end -->
+    <% if address_was_invalid %>
+      <% non_ski_activity.errors.full_messages_for(:address).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for address end -->
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>
