@@ -3,7 +3,7 @@ class SkiAreasController < ApplicationController
 
   # GET /ski_areas
   def index
-    @ski_areas = SkiArea.all
+    @ski_areas = SkiArea.page(params[:page]).per(10)
   end
 
   # GET /ski_areas/1

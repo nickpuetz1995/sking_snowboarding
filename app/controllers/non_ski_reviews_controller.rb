@@ -3,7 +3,7 @@ class NonSkiReviewsController < ApplicationController
 
   # GET /non_ski_reviews
   def index
-    @non_ski_reviews = NonSkiReview.all
+    @non_ski_reviews = NonSkiReview.page(params[:page]).per(10)
   end
 
   # GET /non_ski_reviews/1
