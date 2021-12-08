@@ -7,12 +7,20 @@
     <dl class="mb-1">
       <dt>Friend sender</dt>
       <!-- Display friend_sender_id start -->
-      <dd><%= friend.friend_sender_id %></dd>
+      <dd>
+        <% if @friend.friend_sender.present? %>
+          <%= link_to friend.friend_sender, friend.friend_sender %>
+        <% end %>
+      </dd>
       <!-- Display friend_sender_id end -->
 
       <dt>Friend recipient</dt>
       <!-- Display friend_recipient_id start -->
-      <dd><%= friend.friend_recipient_id %></dd>
+      <dd>
+        <% if @friend.friend_recipient.present? %>
+          <%= link_to friend.friend_recipient, friend.friend_recipient %>
+        <% end %>
+      </dd>
       <!-- Display friend_recipient_id end -->
 
     </dl>

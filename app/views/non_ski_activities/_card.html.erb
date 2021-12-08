@@ -12,7 +12,11 @@
 
       <dt>Tagged ski area</dt>
       <!-- Display tagged_ski_area_id start -->
-      <dd><%= non_ski_activity.tagged_ski_area_id %></dd>
+      <dd>
+        <% if @non_ski_activity.tagged_ski_area.present? %>
+          <%= link_to non_ski_activity.tagged_ski_area, non_ski_activity.tagged_ski_area %>
+        <% end %>
+      </dd>
       <!-- Display tagged_ski_area_id end -->
 
       <dt>Title</dt>

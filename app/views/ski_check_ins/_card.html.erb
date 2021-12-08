@@ -7,12 +7,20 @@
     <dl class="mb-1">
       <dt>User</dt>
       <!-- Display user_id start -->
-      <dd><%= ski_check_in.user_id %></dd>
+      <dd>
+        <% if @ski_check_in.user.present? %>
+          <%= link_to ski_check_in.user, ski_check_in.user %>
+        <% end %>
+      </dd>
       <!-- Display user_id end -->
 
       <dt>Ski area</dt>
       <!-- Display ski_area_id start -->
-      <dd><%= ski_check_in.ski_area_id %></dd>
+      <dd>
+        <% if @ski_check_in.ski_area.present? %>
+          <%= link_to ski_check_in.ski_area, ski_check_in.ski_area %>
+        <% end %>
+      </dd>
       <!-- Display ski_area_id end -->
 
     </dl>

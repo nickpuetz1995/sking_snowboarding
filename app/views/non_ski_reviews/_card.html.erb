@@ -7,12 +7,20 @@
     <dl class="mb-1">
       <dt>Non ski activity</dt>
       <!-- Display non_ski_activity_id start -->
-      <dd><%= non_ski_review.non_ski_activity_id %></dd>
+      <dd>
+        <% if @non_ski_review.non_ski_activity.present? %>
+          <%= link_to non_ski_review.non_ski_activity, non_ski_review.non_ski_activity %>
+        <% end %>
+      </dd>
       <!-- Display non_ski_activity_id end -->
 
       <dt>User</dt>
       <!-- Display user_id start -->
-      <dd><%= non_ski_review.user_id %></dd>
+      <dd>
+        <% if @non_ski_review.user.present? %>
+          <%= link_to non_ski_review.user, non_ski_review.user %>
+        <% end %>
+      </dd>
       <!-- Display user_id end -->
 
       <dt>Review</dt>
