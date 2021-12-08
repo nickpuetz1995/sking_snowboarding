@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :ski_check_ins
   resources :friends
   devise_for :users
   resources :users
