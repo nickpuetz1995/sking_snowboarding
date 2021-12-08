@@ -9,6 +9,9 @@ class NonSkiActivityResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :tagged_ski_area,
+             resource: SkiAreaResource
+
   # Indirect associations
 
 end

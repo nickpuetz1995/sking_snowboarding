@@ -9,6 +9,9 @@ class SkiAreaResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :non_ski_activities,
+             foreign_key: :tagged_ski_area_id
+
   has_many   :ski_area_reviews
 
   has_many   :ski_check_ins
