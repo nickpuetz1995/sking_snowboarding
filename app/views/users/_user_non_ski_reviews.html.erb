@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Non Ski Reviews
+
+    <a data-toggle="collapse" href="#user_non_ski_reviews_new_form">
+      Add non ski review
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.non_ski_reviews.each do |non_ski_review| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <%= link_to non_ski_review, non_ski_review %>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="user_non_ski_reviews_new_form">
+        <!-- New associationcollection form start -->
+
+        <!-- New associationcollection form end -->
+      </div>
+    </div>
+
+  </ul>
+</div>

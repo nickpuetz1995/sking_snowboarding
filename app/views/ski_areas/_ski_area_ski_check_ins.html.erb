@@ -1,0 +1,35 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Ski Check Ins
+
+    <a data-toggle="collapse" href="#ski_area_ski_check_ins_new_form">
+      Add ski check in
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @ski_area.ski_check_ins.each do |ski_check_in| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <%= link_to ski_check_in, ski_check_in %>
+        <!-- Show link end -->
+
+        <!-- Delete link start -->
+        <%= link_to ski_check_in, method: :delete, data: { confirm: "Do you really want to delete this ski_check_in" } do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+        <!-- Delete link end -->
+
+      </li>
+    <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="ski_area_ski_check_ins_new_form">
+        <!-- New associationcollection form start -->
+
+        <!-- New associationcollection form end -->
+      </div>
+    </div>
+
+  </ul>
+</div>
