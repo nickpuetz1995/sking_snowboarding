@@ -8,6 +8,8 @@ class UserResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :ski_check_ins
+
   has_many   :friends_received,
              resource: FriendResource,
              foreign_key: :friend_recipient_id
