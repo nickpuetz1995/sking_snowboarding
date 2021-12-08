@@ -9,6 +9,8 @@ class SkiAreaReviewResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :ski_area
+
   belongs_to :user
 
   # Indirect associations
